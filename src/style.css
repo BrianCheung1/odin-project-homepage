@@ -19,18 +19,19 @@ h1 {
 
 /* Parent container to align header and projects */
 .content-wrapper {
-  padding: 50px 100px 0 100px;
+  padding: 50px 0 0 0;
 }
 
 .header {
   display: flex;
   gap: 10px;
   justify-content: center;
+  padding: 50px;
 }
 
 .header img {
-  height: 800px;
-  width: auto;
+  height: auto;
+  width: 50%;
   object-fit: cover;
 }
 
@@ -38,7 +39,7 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-width: 250px;
+  min-width: 300px;
   max-width: 100%;
 }
 
@@ -53,6 +54,13 @@ h1 {
   font-size: 24px;
 }
 
+.projects {
+  background-color: white;
+  padding: 40px;
+  margin-top: 40px;
+}
+
+
 .project-container {
   display: grid;
   grid-template-columns: repeat(3, minmax(250px, 1fr));
@@ -61,7 +69,7 @@ h1 {
 
 /* Styling for individual project cards */
 .project-card {
-  background-color: white;
+  background-color: #f8f8f8;
   border-radius: 8px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -90,11 +98,35 @@ h1 {
 }
 
 i {
-    font-size: 24px;
+  font-size: 24px;
 }
+
+.contact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+  color: white;
+  padding: 50px;
+}
+.contact-text {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.contact-image {
+  flex: 1;
+}
+
+.contact-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
 @media (max-width: 1200px) {
-  .content-wrapper {
-    padding: 30px 50px 0 50px;
+  .header p {
+    font-size: 24px;
   }
   .project-container {
     grid-template-columns: repeat(2, minmax(250px, 1fr));
@@ -102,12 +134,12 @@ i {
 }
 
 @media (max-width: 600px) {
-
-  .content-wrapper {
-    padding: 20px 30px;
-  }
   .header {
     flex-direction: column;
+    align-items: center;
+  }
+  .header img {
+    width: 100%;
   }
   .about p {
     font-size: 16px;
@@ -117,5 +149,18 @@ i {
   }
   .project-container {
     grid-template-columns: repeat(1, minmax(250px, 1fr));
+  }
+  .contact {
+    flex-direction: column;
+  }
+
+  .contact-text,
+  .contact-image {
+    width: 100%;
+  }
+
+  .contact-text {
+    padding-right: 0;
+    padding-bottom: 20px;
   }
 }
